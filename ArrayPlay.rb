@@ -59,4 +59,7 @@ puts four_words(sentence).inspect
 
 puts how_many_words(sentence, 2).inspect
 
-puts four_words(how_many_words(sentence,2))
+money = 0
+movies.each {|mon| money += mon[:budget]}
+
+puts "The total budget for the movies is #{money}!"
