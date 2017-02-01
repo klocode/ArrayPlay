@@ -68,11 +68,12 @@ movies.each {|mon| money += mon[:budget]}
 
 puts "The total budget for the movies is #{money}!"
 
-actors = []
+sortedlist = []
+
+sortedlist = movies.select { |movie| movie[:stars]}.collect {|mov| mov[:stars]}.flatten.uniq
+
+puts sortedlist.inspect
+
 
 #two steps: take an array to work off of, parse said array for actors and put those actors into a hash in my actor array
 #assign the results of starring? to a :movie hash in actors array
-
-puts starring?(movies, "Leonardo DiCaprio").inspect
-puts starring?(movies, "Kate Winslet").inspect
-puts starring?(movies, "Tom Hanks").inspect
