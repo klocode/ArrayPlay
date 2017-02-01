@@ -63,13 +63,17 @@ puts "Words of length 4 characters are #{four_words(sentence).inspect}"
 
 puts "The words of asked length are #{how_many_words(sentence, 2).inspect}"
 
+
 money = 0
 movies.each {|mon| money += mon[:budget]}
 
 puts "The total budget for the movies is #{money}!"
 
+#########################EPIC###########################
+
 sortedlist = []
 actors = []
+budget = []
 
 actors = movies.collect {|mov| mov[:stars]}.flatten.uniq
 
@@ -78,3 +82,14 @@ actors.each do |act|
 end
 
 puts sortedlist
+
+budget = movies.collect {|cash| cash[:budget]}
+
+def median(array)
+  sorted = array.sort
+  len = sorted.length
+  (sorted[(len - 1) / 2] + sorted[len / 2]) / 2.0
+end
+
+puts "The average budget is #{money / budget.length}"
+puts "The median budget is #{median(budget)}"
